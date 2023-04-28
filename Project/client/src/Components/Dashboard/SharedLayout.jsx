@@ -5,17 +5,17 @@ import Navbar from '../Navbar/Navbar'
 import { useLocation } from 'react-router';
 
 
-
-const DashBoard = () => {
+const SharedLayout = () => {
   const location = useLocation();
-  const userName = location.state.username
+  // const userName = location.state.username
 
   return (
-    <div>
-      <Navbar/>
+    <>
+      <Navbar/>    
+      <h3 className='gap'>Nav</h3>
       <Outlet/>
-    </div>
+    </>
   )
 }
 
-export default DashBoard
+export default SharedLayout

@@ -1,13 +1,23 @@
 const mongoose = require('mongoose')
 
 const courseSchema = new mongoose.Schema({
-    testname:{
+    cid:{
+        type:Number
+    },
+    coursename:{
+        type:String
+    },
+    level:{
         type:String
     },
     score:{
         type:Number,
     },
     completed:{
+        type:Boolean,
+        default:false
+    },
+    attempted:{
         type:Boolean,
         default:false
     }

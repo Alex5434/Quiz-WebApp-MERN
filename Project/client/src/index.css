@@ -1,7 +1,16 @@
 
 body {
+  height: 400vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'poppins';
+}
+.gap{
+  font-size: 18px;
+}
+@media screen and (max-width:592px) {
+  .gap{
+    font-size: 15px;
+  }
 }

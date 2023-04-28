@@ -17,9 +17,9 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import img from '../../images/loginwall.jpg'
 import './Navbar.css'
+import zIndex from '@mui/material/styles/zIndex';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -43,7 +43,7 @@ function DrawerAppBar(props) {
             </ListItemButton>
           </ListItem>
           </Link>
-          <Link to='/' style={{color:"#000", textDecoration:'none'}}>
+          <Link to='test' style={{color:"#000", textDecoration:'none'}}>
           <ListItem disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText>Subjects</ListItemText>
@@ -53,7 +53,7 @@ function DrawerAppBar(props) {
           <Link to='/' style={{color:"#000", textDecoration:'none'}}>
           <ListItem disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText>Pro Tips</ListItemText>
+              <ListItemText>Tips</ListItemText>
             </ListItemButton>
           </ListItem>
           </Link>
@@ -78,7 +78,7 @@ function DrawerAppBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex'}}>
+    <Box sx={{ display: 'flex', zIndex:"-10"}} className='hello'>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -102,11 +102,31 @@ function DrawerAppBar(props) {
           >
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+            <Link to='/'>
+              <Button sx={{ color: '#fff' }}>
+                Dashboard
               </Button>
-            ))}
+            </Link>
+            <Link to='test'>
+              <Button sx={{ color: '#fff' }}>
+                Subjects
+              </Button>
+            </Link>
+            <Link to='/'>
+              <Button sx={{ color: '#fff' }}>
+                Tips
+              </Button>
+            </Link>
+            <Link to='/'>
+              <Button sx={{ color: '#fff' }}>
+                Profile
+              </Button>
+            </Link>
+            <Link to='/'>
+              <Button sx={{ color: '#fff' }}>
+                Logout
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
