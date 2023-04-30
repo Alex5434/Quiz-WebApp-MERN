@@ -24,7 +24,9 @@ const Login = () => {
             // console.log(response);
             if(response.data.msg==='user found'){
                     history('/dashboard', {state:{username:response.data.username}});
+                    // history({state:{loggedIn:true}})
                 }
+                // console.log();
         })
         .catch(error=>{
             console.log(error);

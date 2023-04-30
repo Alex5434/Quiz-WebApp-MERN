@@ -5,9 +5,11 @@ import Login from './Components/Login/Login';
 import Signup from './Components/SignUp/Signup';
 import Tests from './Components/Tests/Tests';
 import Home from './Components/Dashboard/Home';
+import { useLocation } from 'react-router-dom';
 
 function App() {
-  const [logedIn, setlogedIn] = useState(false)
+  // const location = useLocation()
+  // console.log(location.state.username);
   return (
     <BrowserRouter>
       <Routes>
