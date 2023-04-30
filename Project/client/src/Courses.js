@@ -48,7 +48,7 @@ export const courses = [
                 ansid:1,
                 qname:"Medium 1",
                 options:[
-                    "option 1","option 2", "option 3"
+                    "option 1","option 2", "option 3","option 2"
                 ],
                 ans:"option 1"
             },
@@ -56,7 +56,7 @@ export const courses = [
                 ansid:2,
                 qname:"Medium 2",
                 options:[
-                    "option 21","option 22", "option 23"
+                    "option 21","option 22", "option 23","option 2"
                 ],
                 ans:"option 21"
             },
@@ -64,9 +64,17 @@ export const courses = [
                 ansid:3,
                 qname:"Medium 3",
                 options:[
-                    "option 31","option 32", "option 33"
+                    "option 31","option 32", "option 33","option 2"
                 ],
                 ans:"option 31"
+            },
+            {
+                ansid:4,
+                qname:"Medium 4",
+                options:[
+                    "option 41","option 42", "option 41","option 2"
+                ],
+                ans:"option 41"
             }
         ]
     },

@@ -10,20 +10,13 @@ import './MapCourses.css'
 
 const MapCourses = ({data}) => {
   const test = data.questions;
+  
+  const arr = test;
   const [id, setId] = useState(1);
   const [courseStart, setcourseStart] = useState(false)
-
-  const nextQuiz = ()=>{
-    console.log("Next Button");
-    setId(id+1);
-  }
-  const prevQuiz = ()=>{
-    console.log("prev Button");
-    setId(id-1);
-  }
-  const CheckAnswer = ()=>{
-
-  }
+  
+  
+  
   
   const location = useLocation()
   const AddTest = (e)=>{
@@ -38,7 +31,6 @@ const MapCourses = ({data}) => {
     //   completed:false,
     //   attempted:true,
     // })
-    console.log(test);
     setcourseStart(true)
   }
   return (
@@ -54,27 +46,43 @@ const MapCourses = ({data}) => {
       </div>
       <button className='sub-btn' onClick={AddTest}>Start<EastOutlinedIcon/></button>
       {courseStart && (
-      test.map((test)=>{
+        test.map((test)=>{
         if(id===test.ansid){
+          let correctAnswers = 0;
+          let markedAnswer = '';
+          const markAnswer = (e)=>{
+            markedAnswer = e.target.value;
+          }
+          const nextQuiz = ()=>{
+            // console.log(typeof markedAnswer+" "+typeof test.ans);
+            console.log(markedAnswer==test.ans)
+            correctAnswers++
+              setId(id+1);
+            }
+            const handleSubmit = ()=>{
+              console.log(markedAnswer);
+              console.log(correctAnswers);
+              setId(1);
+              setcourseStart(false)
+          }
           return(
-            <div className='ques-container'>
+            <div className='ques-container' key={test.ansid}>
               <div className="heading">
-                <h3 heading>{test.qname}</h3>
-                <CloseIcon className='close-btn' onClick={()=>{setcourseStart(false)}}/>
-              </div>
+                <h3>{test.qname}</h3>
+                <CloseIcon className='close-btn' onClick={()=>{
+                  setcourseStart(false)
+                  setId(1);
+                  }}/>
+              </div> 
               <div className='option-container'>
-                {test.options.map((opt)=>{
-                  return<div className='options'>
-                      {opt}
-                  </div>
+                {test.options.map((opt,index)=>{
+                  return<input type='button' value={opt} key={index} className='options' onClick={markAnswer}/>
                 })}
               </div>
-              <div>
-                {id!==1 && <button onClick={prevQuiz}>Prev</button>}
-                {id!==test.length && <button onClick={nextQuiz}>Next</button>}
-                {id===test.length && <button>Submit</button>}
+              <div className='action-buttons'>
+                {(id!==arr.length) && <button onClick={nextQuiz}  >Next</button>}
               </div>
-              <button onClick={()=>{console.log()}}>Check</button>
+              {id===arr.length && <button className='submit-btn' onClick={handleSubmit}>Submit</button>}
             </div>
             
           )
