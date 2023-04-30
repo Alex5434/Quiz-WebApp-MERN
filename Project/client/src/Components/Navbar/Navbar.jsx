@@ -36,7 +36,7 @@ function DrawerAppBar(props) {
       </Typography>
       <Divider />
       <List>  
-        <Link to='/' style={{color:"#000", textDecoration:'none'}}>
+        <Link to='/dashboard' style={{color:"#000", textDecoration:'none'}}>
           <ListItem disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
               <ListItemText>Dashboard</ListItemText>
@@ -102,7 +102,7 @@ function DrawerAppBar(props) {
           >
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <Link to='/'>
+            <Link to='/dashboard'>
               <Button sx={{ color: '#fff' }}>
                 Dashboard
               </Button>

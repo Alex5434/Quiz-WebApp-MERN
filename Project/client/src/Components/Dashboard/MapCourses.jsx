@@ -10,7 +10,7 @@ import './MapCourses.css'
 
 const MapCourses = ({data}) => {
   const test = data.questions;
-  
+  const [correct, setcorrect] = useState(1)
   const arr = test;
   const [id, setId] = useState(1);
   const [courseStart, setcourseStart] = useState(false)
@@ -47,21 +47,24 @@ const MapCourses = ({data}) => {
       <button className='sub-btn' onClick={AddTest}>Start<EastOutlinedIcon/></button>
       {courseStart && (
         test.map((test)=>{
+          
         if(id===test.ansid){
-          let correctAnswers = 0;
           let markedAnswer = '';
           const markAnswer = (e)=>{
             markedAnswer = e.target.value;
           }
           const nextQuiz = ()=>{
-            // console.log(typeof markedAnswer+" "+typeof test.ans);
-            console.log(markedAnswer==test.ans)
-            correctAnswers++
+              if(markedAnswer===test.ans){
+                setcorrect(correct+1)
+              }
               setId(id+1);
             }
             const handleSubmit = ()=>{
-              console.log(markedAnswer);
-              console.log(correctAnswers);
+              if(markedAnswer===test.ans){
+                setcorrect(correct+1)
+              }
+              console.log("your score is"+correct);
+              setcorrect(1)
               setId(1);
               setcourseStart(false)
           }
@@ -77,10 +80,10 @@ const MapCourses = ({data}) => {
               <div className='option-container'>
                 {test.options.map((opt,index)=>{
                   return<input type='button' value={opt} key={index} className='options' onClick={markAnswer}/>
-                })}
+                })} 
               </div>
               <div className='action-buttons'>
-                {(id!==arr.length) && <button onClick={nextQuiz}  >Next</button>}
+                {(id!==arr.length) && <button onClick={nextQuiz} >Next</button>}
               </div>
               {id===arr.length && <button className='submit-btn' onClick={handleSubmit}>Submit</button>}
             </div>

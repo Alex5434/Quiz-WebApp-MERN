@@ -46,7 +46,7 @@ export const courses = [
         questions:[
             {
                 ansid:1,
-                qname:"Medium 1",
+                qname:"Medium 1 Medium 1 Medium 1 Medium 1 Medium 1 Medium 1 Medium 1 Medium 1 Medium 1 Medium 1 v vMedium 1 Medium 1Medium 1 Medium 1 Medium 1 Medium 1 Medium 1",
                 options:[
                     "option 1","option 2", "option 3","option 2"
                 ],

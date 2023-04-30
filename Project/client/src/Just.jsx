@@ -10,13 +10,6 @@ const Just = () => {
     console.log("Next Button");
     setId(id+1);
   }
-  const prevQuiz = ()=>{
-    console.log("prev Button");
-    setId(id-1);
-  }
-  const CheckAnswer = ()=>{
-
-  }
   return (
       test.map((test)=>{
         if(id===test.id){
@@ -27,7 +20,7 @@ const Just = () => {
                 {test.options.map((opt)=>{
                   return<div>
                     <label>{opt}</label>
-                    <input type="radio" name={opt} id="" />
+                    <input type="radio" name={opt} />
                   </div>
                 })}
               </div>
