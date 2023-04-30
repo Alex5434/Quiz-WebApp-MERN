@@ -11,7 +11,7 @@ export const courses = [
         questions:[
             {
                 ansid:1,
-                cname:"The Great Alexander",
+                qname:"The Great Alexander",
                 options:[
                     "option 1","option 2", "option 3"
                 ],
@@ -19,7 +19,7 @@ export const courses = [
             },
             {
                 ansid:2,
-                cname:"The Great Alexander2",
+                qname:"The Great Alexander2",
                 options:[
                     "option 21","option 22", "option 23"
                 ],
@@ -27,7 +27,7 @@ export const courses = [
             },
             {
                 ansid:3,
-                cname:"The Great Alexander3",
+                qname:"The Great Alexander3",
                 options:[
                     "option 31","option 32", "option 33"
                 ],
@@ -46,7 +46,7 @@ export const courses = [
         questions:[
             {
                 ansid:1,
-                cname:"The Great Alexander",
+                qname:"Medium 1",
                 options:[
                     "option 1","option 2", "option 3"
                 ],
@@ -54,7 +54,7 @@ export const courses = [
             },
             {
                 ansid:2,
-                cname:"The Great Alexander2",
+                qname:"Medium 2",
                 options:[
                     "option 21","option 22", "option 23"
                 ],
@@ -62,7 +62,7 @@ export const courses = [
             },
             {
                 ansid:3,
-                cname:"The Great Alexander3",
+                qname:"Medium 3",
                 options:[
                     "option 31","option 32", "option 33"
                 ],
@@ -81,7 +81,7 @@ export const courses = [
         questions:[
             {
                 ansid:1,
-                cname:"The Great Alexander",
+                qname:"The Great Alexander",
                 options:[
                     "option 1","option 2", "option 3"
                 ],
@@ -89,7 +89,7 @@ export const courses = [
             },
             {
                 ansid:2,
-                cname:"The Great Alexander2",
+                qname:"The Great Alexander2",
                 options:[
                     "option 21","option 22", "option 23"
                 ],
@@ -97,7 +97,7 @@ export const courses = [
             },
             {
                 ansid:3,
-                cname:"The Great Alexander3",
+                qname:"The Great Alexander3",
                 options:[
                     "option 31","option 32", "option 33"
                 ],
